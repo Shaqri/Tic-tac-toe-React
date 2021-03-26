@@ -7,6 +7,8 @@ module.exports = {
         path: path.join(__dirname, '/dist'),
         filename: '[name].bundle.js'
     },
+    mode: 'development',
+    
     module: {
         rules: [
             {
@@ -15,6 +17,10 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                 }
+            }, 
+            {
+                test: /\.css$/i,
+                use: ['style-loader', 'css-loader'],
             }
         ]
     },

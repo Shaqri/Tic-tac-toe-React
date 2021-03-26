@@ -4,20 +4,27 @@ class Square extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            clicked: false
+            clicked: false,
+            player: ''
         }
         this.handleClick = this.handleClick.bind(this);
     }
 
     handleClick() {
-        this.setState((state) => ({
-            cliked: !state.cliked
-        }));
+        let {clicked} = this.state;
+        if(!clicked) {
+            this.setState((props ,state) => ({
+                clicked: true,
+                player: state.player
+            }));
+        }
+        
     }
 
     render() {
         const {value} = this.props;
-        return (<button onClick={this.handleClick} className='square'>{value}</button>);
+        let {player} = this.state;
+        return (<button onClick={this.handleClick} className='square'>{player}</button>);
         
     }
 }
