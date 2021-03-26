@@ -17,6 +17,8 @@ class Square extends Component {
                 clicked: true,
                 player: state.player
             }));
+
+            this.props.changePlayer();
         }
         
     }

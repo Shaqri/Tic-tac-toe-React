@@ -11,7 +11,7 @@ class Game extends Component {
 	}
 
 	changePlayer() {
-		
+		console.log('yesney');
 		const {currentPlayer} = this.state
 		let nextPlayer;
 		

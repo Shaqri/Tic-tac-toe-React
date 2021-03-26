@@ -4,15 +4,10 @@ import Square from './Square';
 class Board extends Component {
     constructor(props) {
         super(props);
-        this.handleClick = this.handleClick.bind(this);
-    }
-
-    handleClick() {
-        this.props.changePlayer();
     }
 
     renderSquare(number) {
-        return <Square value={number} player={this.props.player} />
+        return <Square value={number} player={this.props.player} changePlayer={this.props.changePlayer}/>
     }
 
     renderRow(number) {
@@ -34,7 +29,7 @@ class Board extends Component {
     }
     render() {
        return( 
-            <div onClick={this.handleClick} className='board'>
+            <div className='board'>
             {this.renderRow(1)}
             {this.renderRow(2)}
             {this.renderRow(3)}
